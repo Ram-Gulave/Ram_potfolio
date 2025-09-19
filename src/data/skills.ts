@@ -7,7 +7,6 @@ export type SkillItem = {
 };
 
 export type SkillCategory = {
-  [x: string]: never[];
   title: string;
   iconClass?: string;
   iconPath?: string;
@@ -73,7 +72,6 @@ export const skills: SkillCategory[] = [
   {
     title: "Other Skills",
     iconClass: "devicon-brain-or-ai-icon colored",
-    // iconPath: "/icons/rocket.svg",  // example custom icon
     skills: [
       { name: "Canva", iconPath: "/canva.png" },
       { name: "Postman", iconClass: "devicon-postman-plain colored" },
