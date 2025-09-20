@@ -3,17 +3,19 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { experienceData } from "@/data/experienceData"; // your data
+import { ChevronLeft, ChevronRight } from "lucide-react"; // using lucide icons; can use react-icons etc.
 
 // Hook to detect if screen is mobile (below a given width)
 function useIsMobile(_breakpoint = 640) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 640);
-    const handleResize = () => setIsMobile(window.innerWidth < 640);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    const check = () => setIsMobile(window.innerWidth < _breakpoint);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [_breakpoint]);
+
   return isMobile;
 }
 
@@ -25,11 +27,19 @@ export default function ExperienceSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % experienceData.length);
-    }, 4000);
+    }, 7000);
     return () => clearInterval(timer);
   }, []);
 
   const exp = experienceData[current];
+
+  const goPrev = () => {
+    setCurrent((prev) => (prev - 1 + experienceData.length) % experienceData.length);
+  };
+
+  const goNext = () => {
+    setCurrent((prev) => (prev + 1) % experienceData.length);
+  };
 
   return (
     <section
@@ -58,15 +68,38 @@ export default function ExperienceSection() {
         </div>
 
         {/* Description */}
-        <p className={`text-sm sm:text-md md:text-lg mb-4 text-center max-w-xs sm:max-w-md md:max-w-5xl mx-auto ${isDark ? "text-white/90" : "text-gray-600"}`}>
+        <p className={`text-sm sm:text-md md:text-lg mb-1 text-center max-w-xs sm:max-w-md md:max-w-5xl mx-auto ${isDark ? "text-white/90" : "text-gray-600"}`}>
           A selection of my key web development projects, including internships, personal, and college projects. These highlight my skills in{" "}
           <span className="text-black font-semibold">
             Next.js, React, Tailwind CSS, MERN Stack, Flask, and Sanity CMS
           </span>, with a focus on building responsive interfaces, integrating APIs, managing databases, and deploying scalable applications. From e-commerce platforms to documentation sites and crypto trackers, these projects demonstrate real-world solutions with clean, maintainable code.
         </p>
 
+        {/* Prev / Next icon buttons below description with blurred background */}
+        <div className="flex justify-center mb-2 space-x-4 relative">
+          <div className="absolute inset-0 rounded-full w-full max-w-xs mx-auto"></div>
+          <div className="relative flex space-x-4">
+            <button
+              onClick={goPrev}
+              className="p-2 rounded-full bg-gray-300 hover:bg-gray-400 text-white transition-all duration-200 filter"
+              aria-label="Previous Project"
+            >
+              <ChevronLeft size={24} />
+            </button>
+
+            <button
+              onClick={goNext}
+              className="p-2 rounded-full bg-gray-300 hover:bg-gray-400 text-white transition-all duration-200"
+              aria-label="Next Project"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </div>
+        </div>
+
+
         {isMobile ? (
-          // ** MOBILE VIEW: one card only **
+          // MOBILE VIEW: one card only
           <div className={`
             rounded-2xl
             p-4
@@ -162,7 +195,7 @@ export default function ExperienceSection() {
               )}
             </div>
 
-            {/* Meta: duration & time */}
+            {/* Duration & Time */}
             <div className="mt-4 grid grid-cols-2 gap-4">
               <div>
                 <div className={`text-xs ${isDark ? "text-white/70" : "text-gray-600"}`}>Duration</div>
@@ -242,14 +275,12 @@ export default function ExperienceSection() {
                   <h3 className={`text-sm font-medium ${isDark ? "text-white/80" : "text-gray-800"}`}>Tech Stack</h3>
                   <div className="mt-4 flex flex-wrap gap-3">
                     {exp.elevation.split(",").map((tech, i) => (
-                      <span key={i} className={`px-3 py-1 rounded-lg text-xs font-medium ${isDark ? "bg-white/10 text-white" : "bg-gray-200 text-gray-800"}`}>
-                        {tech.trim()}
-                      </span>
+                      <span key={i} className={`px-3 py-1 rounded-lg text-xs font-medium ${isDark ? "bg-white/10 text-white" : "bg-gray-200 text-gray-800"}`}>{tech.trim()}</span>
                     ))}
                   </div>
                 </div>
 
-                {/* Duration Chart */}
+                {/* Duration Chart etc. */}
                 <div className={`
                   col-span-1
                   rounded-xl
@@ -352,13 +383,11 @@ export default function ExperienceSection() {
                       );
                     })()}
                   </div>
-                  <div className={`text-xs mt-2 ${isDark ? "text-white/60" : "text-gray-600"}`}>
-                    Duration of each project (months)
-                  </div>
+                  <div className={`text-xs mt-2 ${isDark ? "text-white/60" : "text-gray-600"}`}>Duration of each project (months)</div>
                 </div>
               </div>
 
-              {/* Live Links */}
+              {/* Live Links, etc… */}
               <div className="mt-3 space-y-1">
                 {exp.links && exp.links.length > 0 ? (
                   exp.links.map((link, idx) => (
@@ -384,6 +413,7 @@ export default function ExperienceSection() {
 
             {/* Right column */}
             <aside className="lg:col-span-4 col-span-1 flex flex-col gap-6">
+              {/* Title, meta, etc… */}
               <div className={`
                 rounded-2xl
                 p-6
