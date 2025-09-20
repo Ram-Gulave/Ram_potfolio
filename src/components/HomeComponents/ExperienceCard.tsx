@@ -136,8 +136,8 @@ export default function ExperienceSection() {
             title: "Blog Website (Next.js + Sanity CMS)",
             location: "Pune, India",
             type: "Intern",
-            time: "2024",
-            distance: "4 months",
+            time: "August  2025",
+            distance: "2 months",
             techStack:
                 "Next.js, Tailwind CSS, TypeScript, React(ES6), Sanity CMS, Git/GitHub, NGINX",
             description:
@@ -150,7 +150,7 @@ export default function ExperienceSection() {
             title: "Documentation Website (Next.js + Docusaurus)",
             location: "Pune, India",
             type: "Intern",
-            time: "2025",
+            time: "July 2025",
             distance: "2 months",
             techStack:
                 "Docusaurus, Tailwind CSS, React, Markdown/MDX, TypeScript, Git/GitHub, NGINX",
@@ -164,8 +164,8 @@ export default function ExperienceSection() {
             title: "Web Dev Intern",
             location: "Pune, India",
             type: "Intern",
-            time: "June 2025 – September 2024",
-            distance: "5 months",
+            time: "June 2025 – September 2025",
+            distance: "3 months",
             techStack:
                 "Next.js, Tailwind CSS, TypeScript, React (ES6, JSX), jQuery, NPM, Git/GitHub, NGINX",
             description:
@@ -182,7 +182,7 @@ export default function ExperienceSection() {
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prev) => (prev + 1) % experiences.length);
-        }, 4000);
+        }, 7000);
         return () => clearInterval(interval);
     }, [experiences.length]);
 
