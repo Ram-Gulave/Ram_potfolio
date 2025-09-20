@@ -19,9 +19,10 @@ function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="md:hidden fixed top-0 left-0 w-full z-10 bg-white/90 shadow-[0_0_10px_rgba(0,0,0,0.2)]" style={{ backdropFilter: "blur(40px)" }}>
-
-
+    <div
+      className="md:hidden fixed top-0 left-0 w-full z-10 bg-white/90 shadow-[0_0_10px_rgba(0,0,0,0.2)]"
+      style={{ backdropFilter: "blur(40px)" }}
+    >
       <div className="flex items-center justify-between px-6 py-3">
         <div className="text-2xl font-bold text-gray-800">Ram</div>
         <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
@@ -47,7 +48,6 @@ function MobileNavbar() {
             >
               {link.name}
             </a>
-
           ))}
         </motion.div>
       )}
@@ -67,30 +67,41 @@ function MainNavbar() {
   }, []);
 
   return (
-    <nav className="fixed w-full z-50 backdrop-blur-sm">
-      {/* Laptop/Desktop View */}
-      <div className="hidden md:flex justify-center items-center">
+    <nav className="fixed w-full z-50">
+      {/* Desktop / laptop */}
+      <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-6 py-4">
+        {/* Left: Logo “Ram”, shown only if not scrolled */}
         {!scrolled && (
-          <div className="text-2xl font-bold text-gray-800 pl-10 mt-6 transition-all duration-300">
-            Ram<span className="text-blue-600"></span>
+          <div className="flex-shrink-0">
+            <div className="text-2xl font-bold text-gray-800 transition-all duration-300">
+              Ram
+            </div>
           </div>
         )}
 
-        <div className="relative max-w-7xl mx-auto mt-4 rounded-4xl p-[2px] aura-gradient mr-68">
-          <div className="flex items-center justify-between w-full px-6 py-1 bg-white backdrop-blur-3xl rounded-4xl shadow-[0_0_10px_rgba(0,0,0,0.2)]">
-            <div className="hidden md:flex space-x-6">
+        {/* Center */}
+        <div className="flex-1 flex justify-center">
+          <div className="rounded-4xl p-[2px] aura-gradient">
+            <div className="flex items-center space-x-6 bg-white backdrop-blur-3xl px-6 py-1 rounded-4xl shadow-[0_0_10px_rgba(0,0,0,0.2)]">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={i}
                   href={link.href}
                   whileHover={{ scale: 1.1, color: "#2563eb" }}
                   className="text-[#030101fd] font-medium transition"
+                  target={link.href.endsWith(".pdf") ? "_blank" : undefined}
+                  rel={link.href.endsWith(".pdf") ? "noreferrer" : undefined}
                 >
                   {link.name}
                 </motion.a>
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Right placeholder to balance layout */}
+        <div className="flex-shrink-0 w-10">
+          {/* can be empty or you can hide the MobileNavbar toggle here */}
         </div>
       </div>
 
