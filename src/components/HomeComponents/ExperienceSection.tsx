@@ -77,7 +77,7 @@ export default function ExperienceSection() {
 
         {/* Prev / Next icon buttons below description with blurred background */}
         <div className="flex justify-center mb-2 space-x-4 relative">
-          <div className="absolute inset-0 bg-white/30 backdrop-blur-md rounded-full w-full max-w-xs mx-auto"></div>
+          <div className="absolute inset-0 rounded-full w-full max-w-xs mx-auto"></div>
           <div className="relative flex space-x-4">
             <button
               onClick={goPrev}

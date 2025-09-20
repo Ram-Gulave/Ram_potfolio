@@ -9,7 +9,7 @@ function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-10 relative flex flex-col items-center justify-center mx-4 md:mx-12"
+      className="scroll-mt-10 mt-[-140px] sm:mt-0 relative flex flex-col items-center justify-center mx-4 md:mx-12"
     >
       {/* Mobile View */}
       <div className="block md:hidden w-full relative">

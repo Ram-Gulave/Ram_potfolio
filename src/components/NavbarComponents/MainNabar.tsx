@@ -71,13 +71,17 @@ function MainNavbar() {
       {/* Desktop / laptop */}
       <div className="hidden md:flex items-center justify-between max-w-7xl mx-auto px-6 py-4">
         {/* Left: Logo “Ram”, shown only if not scrolled */}
-        {!scrolled && (
-          <div className="flex-shrink-0">
+        {/* Left: Logo “Ram”, shown only if not scrolled */}
+        <div className="flex-shrink-0 w-24">
+          {!scrolled ? (
             <div className="text-2xl font-bold text-gray-800 transition-all duration-300">
               Ram
             </div>
-          </div>
-        )}
+          ) : (
+            <div className="invisible">Ram</div>
+          )}
+        </div>
+
 
         {/* Center */}
         <div className="flex-1 flex justify-center">
@@ -87,7 +91,7 @@ function MainNavbar() {
                 <motion.a
                   key={i}
                   href={link.href}
-                  whileHover={{ scale: 1.1, color: "#2563eb" }}
+                  // whileHover={{ scale: 1.1, color: "#2563eb" }}
                   className="text-[#030101fd] font-medium transition"
                   target={link.href.endsWith(".pdf") ? "_blank" : undefined}
                   rel={link.href.endsWith(".pdf") ? "noreferrer" : undefined}
