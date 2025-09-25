@@ -230,10 +230,10 @@ export default function ExperienceSection() {
           </div>
         ) : (
           // ** DESKTOP / TABLET version: full layout as original **
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 w-full">
             {/* Left big card */}
             <div className={`
-              lg:col-span-8
+              lg:col-span-7
               col-span-1
               rounded-2xl
               p-6
@@ -412,7 +412,7 @@ export default function ExperienceSection() {
             </div>
 
             {/* Right column */}
-            <aside className="lg:col-span-4 col-span-1 flex flex-col gap-6">
+            <aside className="sm:col-span-5 col-span-1 flex flex-col gap-6">
               {/* Title, meta, etc… */}
               <div className={`
                 rounded-2xl
@@ -442,9 +442,9 @@ export default function ExperienceSection() {
                     </div>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <button className={`w-10 h-10 rounded-full flex items-center justify-center border transition-colors duration-500 ${isDark ? "bg-white/6 border-white/8" : "bg-gray-100 border-gray-300"}`}>
+                    {/* <button className={`w-10 h-10 rounded-full flex items-center justify-center border transition-colors duration-500 ${isDark ? "bg-white/6 border-white/8" : "bg-gray-100 border-gray-300"}`}>
                       🔔
-                    </button>
+                    </button> */}
                     <button
                       onClick={() => setIsDark(!isDark)}
                       className={`w-10 h-10 rounded-full flex items-center justify-center border transition-colors duration-500 ${isDark ? "bg-white/6 border-white/8" : "bg-gray-100 border-gray-300"}`}
