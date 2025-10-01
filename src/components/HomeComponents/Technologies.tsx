@@ -4,7 +4,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import "devicon/devicon.min.css";
+// import "devicon/devicon.min.css";
 
 interface Tech {
   name: string;

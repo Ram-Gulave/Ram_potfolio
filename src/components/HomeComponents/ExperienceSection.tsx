@@ -21,7 +21,7 @@ function useIsMobile(_breakpoint = 640) {
 
 export default function ExperienceSection() {
   const [current, setCurrent] = useState(0);
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const isMobile = useIsMobile(640); // you can change 640 to your mobile breakpoint  
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export default function ExperienceSection() {
         p-4 sm:p-8
         transition-colors duration-500
         ${isDark
-          ? "bg-[linear-gradient(180deg,#0b1220,rgba(9,14,19,0.6))] text-white rounded-[20px] sm:rounded-[40px] mb-8 sm:mb-10 mx-4 sm:mx-10"
+          ? "bg-[linear-gradient(180deg,#122620)] text-white rounded-[20px] sm:rounded-[40px] mb-8 sm:mb-10 mx-4 sm:mx-18"
           : "bg-gray-50 text-gray-900 mb-2 sm:mb-10 mx-4 sm:mx-10"
         }
       `}
@@ -70,7 +70,7 @@ export default function ExperienceSection() {
         {/* Description */}
         <p className={`text-sm sm:text-md md:text-lg mb-1 text-center max-w-xs sm:max-w-md md:max-w-5xl mx-auto ${isDark ? "text-white/90" : "text-gray-600"}`}>
           A selection of my key web development projects, including internships, personal, and college projects. These highlight my skills in{" "}
-          <span className="text-black font-semibold">
+          <span className={`${isDark ? "text-white font-semibold" : "text-gray-900 font-semibold"}`}>
             Next.js, React, Tailwind CSS, MERN Stack, Flask, and Sanity CMS
           </span>, with a focus on building responsive interfaces, integrating APIs, managing databases, and deploying scalable applications. From e-commerce platforms to documentation sites and crypto trackers, these projects demonstrate real-world solutions with clean, maintainable code.
         </p>
@@ -421,7 +421,7 @@ export default function ExperienceSection() {
                 shadow-md
                 backdrop-blur-md
                 transition-colors duration-500
-                ${isDark ? "bg-white/5 border-white/6" : "bg-white border-gray-200"}
+                ${isDark ? "bg-[#b68d40]/20 border-white/6" : "bg-white border-gray-200"}
               `}>
                 <div className="flex items-start justify-between">
                   <div>
