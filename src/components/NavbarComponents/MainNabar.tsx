@@ -12,7 +12,7 @@ const navLinks = [
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
-  { name: "Resume", href: "/internship.pdf" },
+  { name: "Resume", href: "/newResume.pdf" },
 ];
 
 function MobileNavbar() {
