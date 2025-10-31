@@ -67,13 +67,53 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
+// export default function RootLayout({
+//   children,
+// }: Readonly<{
+//   children: React.ReactNode;
+// }>) {
+//   return (
+//     <html lang="en" className={`${roboto.variable}
+//     <!-- Google tag (gtag.js) -->
+// <script async src="https://www.googletagmanager.com/gtag/js?id=G-CFBJRK9XB0"></script>
+// <script>
+//   window.dataLayer = window.dataLayer || [];
+//   function gtag(){dataLayer.push(arguments);}
+//   gtag('js', new Date());
+
+//   gtag('config', 'G-CFBJRK9XB0');
+// </script>
+//     `}>
+//       <body className={`${roboto.variable} antialiased`}>
+//         {children}
+//         <div id="portal-root"></div>
+//       </body>
+//     </html>
+//   );
+// }
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className={`${roboto.variable}`}>
+    <html lang="en" className={roboto.variable}>
+      <head>
+        {/* ✅ Google Analytics (GA4) */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=G-CFBJRK9XB0`} // Replace with your GA4 ID
+        />
+        <script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CFBJRK9XB0'); // Replace with your GA4 ID
+          `}
+        </script>
+      </head>
       <body className={`${roboto.variable} antialiased`}>
         {children}
         <div id="portal-root"></div>
