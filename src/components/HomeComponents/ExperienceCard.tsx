@@ -127,7 +127,7 @@ export default function ExperienceSection() {
             techStack: "Next.js, Tailwind CSS, TypeScript, React, Sanity CMS",
             description:
                 "Built a dynamic blog platform with content managed in Sanity CMS. Added SSR, SEO optimization, and responsive design for better performance.",
-            links: [{ label: "Live Website", url: "https://macnman.com/blogs/" }],
+            links: [{ label: "Live Website", url: "https://macnman.com/success-stories/" }],
             heroImage: "/image.png",
         },
         {

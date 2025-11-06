@@ -100,7 +100,7 @@ export const experienceData = [
       "Responsive UI optimized for mobile",
     ],
     links: [
-      { label: "Live Website", url: "https://macnman.com/blogs/" },
+      { label: "Live Website", url: "https://macnman.com/success-stories/" },
     ],
     heroImage: "/image.png",
     author: {
