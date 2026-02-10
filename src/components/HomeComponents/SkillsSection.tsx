@@ -27,7 +27,7 @@ const SkillsSection: React.FC = () => {
   return (
     <section
       className={`scroll-mt-18 transition-colors duration-500 ${
-        isDark ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
+        isDark ? "bg-[#0f0f0f] text-white" : "bg-gray-100 text-gray-900"
       }`}
       id="skills"
     >

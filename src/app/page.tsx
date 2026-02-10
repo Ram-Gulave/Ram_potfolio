@@ -12,15 +12,15 @@ import React from 'react'
 
 function page() {
   return (
-    <div>
+    <div className='bg-[#0f0f0f]'>
       <MainNavbar />
       <Hero />
-      <About />
       <ExperienceCard />
+      <About />
       <Technologies />
       <ExperienceSection />
       <PositionsSection />
-      <SkillsSection />
+      {/* <SkillsSection /> */}
       <ContactSection />
       <Footer />
     </div>

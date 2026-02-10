@@ -66,7 +66,7 @@ const PositionCard: React.FC<{ position: Position }> = ({ position }) => {
 // Main Section Component
 const PositionsSection: React.FC = () => {
     return (
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-[#0f0f0f]">
             <div className="max-w-6xl mx-auto px-4">
 
                 <div className="w-full">
@@ -84,9 +84,9 @@ const PositionsSection: React.FC = () => {
                     </div>
 
                     {/* Description */}
-                    <p className={`text-md sm:text-[16px] mb-4 text-center max-w-5xl mx-auto "text-white/90" : "text-gray-600"}`}>
+                    <p className="text-md sm:text-[16px] mb-4 text-center max-w-5xl mx-auto text-white">
                         Explore the roles and positions where my skills and experience make me a perfect fit — from{" "}
-                        <span className="text-black font-semibold">
+                        <span className="text-white font-semibold">
                             frontend and backend development, cloud computing, mobile applications, to DevOps and system architecture
                         </span>
                         . I bring a hands-on approach to building scalable, efficient, and user-friendly solutions that solve real-world problems.

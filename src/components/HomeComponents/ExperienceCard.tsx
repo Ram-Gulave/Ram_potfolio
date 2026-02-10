@@ -30,34 +30,35 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
     links,
 }) => {
     return (
-        <section className="relative w-8xl my-4 rounded-t-3xl rounded-b-[40px]  overflow-hidden shadow-xl bg-white mx-4">
+        <section className="relative w-8xl my-2 rounded-xl  overflow-hidden  border-[0.5px] border-[#333] bg-[#0f0f0f]mx-4">
             {/* Top Glow / Shadow */}
-            <div
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-20 rounded-3xl"
+            {/* <div
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-10 rounded-3xl"
                 style={{
                     background: "radial-gradient(circle at top, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 80%)",
                     filter: "blur(40px)",
                     zIndex: 0,
                 }}
-            ></div>
+            ></div> */}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center p-8 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-18 items-center p-8 relative z-10">
                 <div>
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">{title}</h2>
+                    <h2 className="text-xl sm:text-2xl font-bold mb-2 text-white">{title}</h2>
 
-                    <div className="text-sm text-gray-500 mb-4 space-x-4">
+                    <div className="text-[12px] text-[#8b8b8be0] mb-2 space-x-4">
                         {location && <span>📍 {location}</span>}
                         {type && <span>💼 {type}</span>}
                         {time && <span>🗓 {time}</span>}
                         {distance && <span>⏳ {distance}</span>}
                     </div>
 
-                    <p className="text-gray-700 mb-6">{description}</p>
+                    <p className="sm:text-sm text-[#8b8b8be0] mb-6">{description}</p>
 
                     {techStack && (
                         <>
-                            <h4 className="font-semibold text-lg mb-2 text-gray-800">Tech Stack:</h4>
-                            <p className="text-sm text-gray-600 mb-6">{techStack}</p>
+                            <h4 className="font-semibold text-lg mb-2 text-white">Tech Stack :
+                                <span className="text-sm text-[#8b8b8be0] mb-6"> {techStack}</span>
+                            </h4>
                         </>
                     )}
 
@@ -68,7 +69,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
                                 href={link.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-4 py-2 rounded-full bg-[#f8afa6] text-white font-semibold shadow-md hover:opacity-90 transition"
+                                className="px-2 py-[5px] bg-green-800 text-white rounded-md font-bold hover:bg-green-700 transition-all text-sm"
                             >
                                 {link.label}
                             </a>
@@ -78,7 +79,7 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
                                 href={liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="px-4 py-2 rounded-full bg-[#f8afa6] text-white font-semibold shadow-md hover:opacity-90 transition"
+                                className="px-2 py-[5px] bg-green-800 text-white rounded-md font-bold hover:bg-green-700 transition-all text-md"
                             >
                                 Live Project
                             </a>
@@ -88,26 +89,14 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
 
                 <div className="relative w-full h-full flex justify-center items-center">
                     <div
-                        className="absolute -inset-8 rounded-3xl"
-                        style={{
-                            background: "radial-gradient(circle, rgba(249,241,240,0.6) 0%, rgba(248,154,137,0.3) 80%)",
-                            filter: "blur(60px)",
-                            zIndex: 0,
-                        }}
-                    ></div>
-
-                    <div
-                        className="relative w-full h-full p-4 rounded-3xl shadow-lg overflow-hidden"
-                        style={{
-                            background: "linear-gradient(135deg, #f9f1f0 0%, #fadcd9 50%, #f8afa6 100%)",
-                        }}
+                        className="relative w-full h-full  rounded-xl overflow-hidden"
                     >
                         <Image
                             src={heroImage}
                             alt={title}
-                            width={800}
-                            height={600}
-                            className="rounded-2xl object-cover w-full h-full"
+                            width={600}
+                            height={400}
+                            className="rounded-xl object-cover w-full h-full"
                         />
                     </div>
                 </div>
@@ -119,19 +108,19 @@ const ExperienceCard: React.FC<ExperienceProps> = ({
 export default function ExperienceSection() {
     const experiences: ExperienceProps[] = [
         {
-            title: "Blog Website (Next.js + Sanity CMS)",
+            title: "Blog Website",
             location: "Pune, India",
             type: "Intern",
             time: "August 2025",
             distance: "2 months",
             techStack: "Next.js, Tailwind CSS, TypeScript, React, Sanity CMS",
             description:
-                "Built a dynamic blog platform with content managed in Sanity CMS. Added SSR, SEO optimization, and responsive design for better performance.",
+                "Built a dynamic blog platform with content managed in Sanity CMS. Added SSR, SEO optimization, and responsive design.",
             links: [{ label: "Live Website", url: "https://macnman.com/success-stories/" }],
             heroImage: "/image.png",
         },
         {
-            title: "Documentation Website (Next.js + Docusaurus)",
+            title: "Documentation Website",
             location: "Pune, India",
             type: "Intern",
             time: "July 2025",
@@ -143,7 +132,7 @@ export default function ExperienceSection() {
             heroImage: "/docs.png",
         },
         {
-            title: "Web Dev Intern",
+            title: "Marketing Website Macnman",
             location: "Pune, India",
             type: "Intern",
             time: "June 2025 – September 2025",
@@ -168,29 +157,49 @@ export default function ExperienceSection() {
     return (
         <div
             id="experience"
-            className="scroll-mt-10 relative bg-[linear-gradient(135deg,#f9f1f0,#fadcd9,#f8afa6,#f79489)] pt-4 pb-1 sm:mx-18 mx-4 rounded-[40px] sm:mt-10 mt-10"
+            className="scroll-mt-10 relative py-20 sm:mx-18 mx-4 rounded-[40px]"
         >
             {/* Header Section */}
-            <div className="max-w-8xl rounded-t-[40px] rounded-b-3xl bg-[linear-gradient(135deg,#f79489,#fadcd9,#f8afa6,#f79489)] sm:mx-4 mx-4">
-                <div className="relative flex justify-center items-center">
-                    <div className="absolute inset-0 flex justify-center">
-                        <div className="w-64 h-2 bg-gradient-to-r from-pink-500 via-red-300 to-yellow-300 blur-3xl opacity-30 rounded-full"></div>
-                    </div>
+            <div className="max-w-8xl rounded-t-[40px] sm:mx-4 mx-4">
+                <div className="relative flex justify-start items-left">
+                    {/* <div className="absolute inset-0 flex justify-center">
+                        <div className="w-64 h-2  rounded-full"></div>
+                    </div> */}
 
-                    <h1 className="mt-4 relative text-4xl sm:text-[60px] font-bold text-center bg-gradient-to-r from-pink-500 via-red-400 to-yellow-500 bg-clip-text text-transparent">
-                        Experiences
+                    <h1 className="mt-4 relative text-4xl sm:text-[36px] font-bold text-left text-[#eeecec] pb-2">
+                        Experience
                     </h1>
                 </div>
 
-                <p className="text-sm sm:text-lg text-center max-w-4xl mx-4 sm:mx-auto text-gray-700">
-                    During my internships, I gained hands-on experience in web development,
-                    building real-world projects that enhanced my skills in{" "}
-                    <span className="font-semibold text-gray-800">
-                        Next.js, React, Tailwind CSS, TypeScript, MERN Stack, Flask, Sanity
-                    </span>
-                    . These experiences improved my UI design, dynamic feature integration,
-                    API work, database handling, and deployment workflows.
-                </p>
+
+                <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
+                    <p className="text-sm sm:text-[16px] -tracking-tight text-left lg:w-[70%] text-[#8b8b8be0] lg:pr-8">
+                        Gained hands-on experience in web development through real-world projects using{" "}
+                        <span className="font-semibold text-[#b5b5b5]">
+                            Next.js, React, Tailwind CSS, TypeScript, MERN, Flask, and Sanity
+                        </span>
+                        , strengthening UI design, APIs, databases, and deployment.
+                    </p>
+
+
+                    {/* Buttons - remaining ~30% width on large screens, aligned right */}
+                    <div className="w-full lg:w-[30%] flex flex-col sm:flex-row justify-end items-end lg:justify-end gap-3 mb-10 sm:mb-0">
+                        <a
+                            href="/newResume.pdf"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full sm:w-auto px-1.5 py-1 bg-green-800 text-white rounded-lg font-bold hover:bg-green-700 transition-all text-sm text-center"
+                        >
+                            Go Through Resume
+                        </a>
+                        <a
+                            href="#contact"
+                            className="w-full sm:w-auto px-1.5 py-1 bg-gray-800 text-white rounded-lg font-bold hover:bg-gray-700 transition-all text-sm text-center"
+                        >
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
             </div>
 
 

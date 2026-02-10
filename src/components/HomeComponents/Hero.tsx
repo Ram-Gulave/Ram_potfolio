@@ -104,14 +104,14 @@ function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto w-full text-center space-y-6">
         <div className="space-y-0.5">
-          <h2 className="text-7xl font-medium text-white leading-tight">
+          <h2 className="text-[52px] sm:text-7xl font-medium text-white leading-tight mx-10">
             Development & Deployment
           </h2>
         </div>
 
-        <p className="text-md font-bold text-gray-300 max-w-3xl mx-auto">
+        <p className="-tracking-tight text-md font-bold text-gray-300 max-w-3xl mx-auto">
           Crafting fast, responsive, and scalable web applications using modern technologies
-          like React, Next.js, Node.js, Tailwind CSS, Supabase, PostgreSQL, and more. From
+          like React, Next.js, Node.js, Tailwind CSS, PostgreSQL, and more. From
           concept to deployment — focused on performance, clean code, and exceptional user
           experiences.
         </p>

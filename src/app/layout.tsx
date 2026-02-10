@@ -186,9 +186,9 @@ export default function RootLayout({
           `}
         </Script>
 
-{/* ✅ Tawk.to Chatbot */}
-<Script id="tawkto" strategy="afterInteractive">
-  {`
+        {/* ✅ Tawk.to Chatbot */}
+        <Script id="tawkto" strategy="afterInteractive">
+          {`
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
       var s1 = document.createElement("script"),
@@ -200,7 +200,7 @@ export default function RootLayout({
       s0.parentNode.insertBefore(s1, s0);
     })();
   `}
-</Script>
+        </Script>
 
       </body>
     </html>

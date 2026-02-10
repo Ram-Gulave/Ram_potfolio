@@ -258,7 +258,7 @@ function MainNavbar() {
   return (
     <>
       {/* Desktop/Laptop Navbar - Dark theme, proper left/right alignment */}
-      <nav className="fixed inset-x-0 top-0 z-50 bg-[#121111] backdrop-blur-xl border-b-1 border-b-gray-400 shadow-md py-4">
+      <nav className="fixed inset-x-0 top-0 z-50 bg-[#121111] backdrop-blur-xl border-b-[0.5px] border-b-[#333] shadow-md py-4">
         <div className="max-w-7xl mx-auto px-24 flex items-center justify-between">
           {/* Left side: Logo + Navigation Links */}
           <div className="hidden md:flex items-center space-x-6">
