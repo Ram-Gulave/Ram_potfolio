@@ -111,7 +111,7 @@ function Hero() {
 
         <p className="-tracking-tight text-md font-bold text-gray-300 max-w-3xl mx-auto">
           Crafting fast, responsive, and scalable web applications using modern technologies
-          like React, Next.js, Node.js, Tailwind CSS, PostgreSQL, and more. From
+          like React, Next.js, Node.js, Tailwind CSS, SQL, and more. From
           concept to deployment — focused on performance, clean code, and exceptional user
           experiences.
         </p>

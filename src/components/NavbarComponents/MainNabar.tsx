@@ -127,8 +127,8 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 const navLinks = [
   { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
+  { name: "About", href: "#about" },
   { name: "Technologies", href: "#technologies" },
   { name: "Projects", href: "#projects" },
   // { name: "Skills", href: "#skills" },
