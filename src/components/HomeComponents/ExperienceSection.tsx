@@ -44,56 +44,52 @@ export default function ExperienceSection() {
   return (
     <section
       id="projects"
-      className={`
+      className="
         scroll-mt-18
         flex justify-center
-        p-4 sm:p-8
         transition-colors duration-500
-        ${isDark
-          ? "bg-[linear-gradient(180deg,#122620)] text-white rounded-[20px] sm:rounded-[40px] mb-8 sm:mb-10 mx-4 sm:mx-18"
-          : "bg-gray-50 text-gray-900 mb-2 sm:mb-10 mx-4 sm:mx-10"
-        }
-      `}
+        mb-30 sm:mb-40 mx-4 sm:mx-20"
       aria-label="Experience"
     >
-      <div className="w-full max-w-5xl">
+      <div className="w-full max-w-6xl">
         {/* Heading */}
-        <div className="relative flex justify-center items-center mb-4 sm:mb-8">
-          <div className="absolute inset-0 flex justify-center">
-            <div className="w-48 h-16 sm:w-64 sm:h-24 bg-gradient-to-r from-pink-600 via-purple-400 to-blue-500 blur-3xl opacity-30 rounded-full"></div>
-          </div>
-          <h1 className="relative text-3xl sm:text-4xl md:text-[60px] font-bold text-center bg-gradient-to-r from-pink-600 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+        <div className="relative flex justify-left items-start">
+          <h1 className="relative text-[#eeecec] text-xl sm:text-3xl font-bold text-left ">
             Featured Projects
           </h1>
         </div>
 
-        {/* Description */}
-        <p className={`text-sm sm:text-md md:text-lg mb-1 text-center max-w-xs sm:max-w-md md:max-w-5xl mx-auto ${isDark ? "text-white/90" : "text-gray-600"}`}>
-          A selection of my key web development projects, including internships, personal, and college projects. These highlight my skills in{" "}
-          <span className={`${isDark ? "text-white font-semibold" : "text-gray-900 font-semibold"}`}>
-            Next.js, React, Tailwind CSS, MERN Stack, Flask, and Sanity CMS
-          </span>, with a focus on building responsive interfaces, integrating APIs, managing databases, and deploying scalable applications. From e-commerce platforms to documentation sites and crypto trackers, these projects demonstrate real-world solutions with clean, maintainable code.
-        </p>
+        <div className="flex items-center gap-4 mb-2 sm:-mb-3 sm:-mt-6">
+          {/* 70% Description */}
+          <div className="w-[70%]">
+            <p className="text-sm sm:text-[16px] -tracking-tight text-left text-[#8b8b8be0]">
+              A showcase of my web development work, featuring internships, personal builds, and college projects. These demonstrate my experience with{' '}
+              <span className="font-semibold text-[#b5b5b5]">
+                Next.js, React, Tailwind CSS, MERN Stack, Flask, and Sanity CMS
+              </span>, and highlight responsive UI, API integration, database management, and deployed full-stack applications.
+            </p>
+          </div>
 
-        {/* Prev / Next icon buttons below description with blurred background */}
-        <div className="flex justify-center mb-2 space-x-4 relative">
-          <div className="absolute inset-0 rounded-full w-full max-w-xs mx-auto"></div>
-          <div className="relative flex space-x-4">
-            <button
-              onClick={goPrev}
-              className="p-2 rounded-full bg-gray-300 hover:bg-gray-400 text-white transition-all duration-200 filter"
-              aria-label="Previous Project"
-            >
-              <ChevronLeft size={24} />
-            </button>
 
-            <button
-              onClick={goNext}
-              className="p-2 rounded-full bg-gray-300 hover:bg-gray-400 text-white transition-all duration-200"
-              aria-label="Next Project"
-            >
-              <ChevronRight size={24} />
-            </button>
+          {/* 30% Buttons */}
+          <div className="relative w-[30%] min-h-[160px]">
+            <div className="absolute bottom-0 sm:bottom-8 right-0 flex flex-col sm:flex-row gap-2 sm:gap-4 ">
+              <button
+                onClick={goPrev}
+                className="px-3 py-1.5 text-xs font-medium rounded-lg bg-white/10 text-[#eeecec] hover:bg-white/20 transition-all text-center"
+                aria-label="Previous Project"
+              >
+                Previous
+              </button>
+
+              <button
+                onClick={goNext}
+                className="px-3 py-1.5 text-xs font-medium rounded-lg border border-white/20 text-[#eeecec] hover:bg-white/10 transition-all text-center"
+                aria-label="Next Project"
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
 
@@ -103,8 +99,6 @@ export default function ExperienceSection() {
           <div className={`
             rounded-2xl
             p-4
-            shadow-2xl
-            border
             overflow-hidden
             backdrop-blur-md
             transition-colors duration-500
@@ -113,7 +107,6 @@ export default function ExperienceSection() {
             <div className={`
               rounded-xl
               overflow-hidden
-              border
               transition-colors duration-500
               ${isDark ? "border-white/8" : "border-gray-200"}
             `}>
@@ -219,38 +212,33 @@ export default function ExperienceSection() {
             </div>
 
             {/* Dark mode toggle etc. */}
-            <div className="mt-4 flex justify-end">
+            {/* <div className="mt-4 flex justify-end">
               <button
                 onClick={() => setIsDark(!isDark)}
                 className={`w-10 h-10 rounded-full flex items-center justify-center border transition-colors duration-500 ${isDark ? "bg-white/6 border-white/8" : "bg-gray-100 border-gray-300"}`}
               >
                 {isDark ? "☀" : "🌙"}
               </button>
-            </div>
+            </div> */}
           </div>
         ) : (
           // ** DESKTOP / TABLET version: full layout as original **
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 w-full">
             {/* Left big card */}
-            <div className={`
-              lg:col-span-7
+            <div className="
+              lg:col-span-6
               col-span-1
               rounded-2xl
               p-6
-              shadow-2xl
               border
+              border-[#222]
               overflow-hidden
-              backdrop-blur-md
-              transition-colors duration-500
-              ${isDark ? "bg-white/5 border-white/6" : "bg-white border-gray-200"}
-            `}>
-              <div className={`
+              h-[580px]
+            ">
+              <div className="
                 rounded-xl
                 overflow-hidden
-                border
-                transition-colors duration-500
-                ${isDark ? "border-white/8" : "border-gray-200"}
-              `}>
+                ">
                 <motion.img
                   key={exp.heroImage}
                   initial={{ opacity: 0 }}
@@ -258,39 +246,39 @@ export default function ExperienceSection() {
                   transition={{ duration: 0.6 }}
                   src={exp.heroImage}
                   alt={exp.title}
-                  className="w-full h-[380px] object-cover object-center"
+                  className="w-full h-[240px] object-cover object-center"
                 />
               </div>
 
               <div className="mt-6 grid grid-cols-2 gap-4">
                 {/* Tech Stack */}
-                <div className={`
+                <div className="
                   col-span-1
-                  rounded-xl
-                  p-6
+                  rounded-2xl
+                  p-8
                   border
-                  transition-colors duration-500
-                  ${isDark ? "bg-white/3 border-white/6" : "bg-gray-100 border-gray-200"}
-                `}>
-                  <h3 className={`text-sm font-medium ${isDark ? "text-white/80" : "text-gray-800"}`}>Tech Stack</h3>
+                  h-[260px]
+                  border-[#333] hover:border-[#555]
+                ">
+                  <h3 className="text-sm font-semibold text-[#eeecec]">Tech Stack</h3>
                   <div className="mt-4 flex flex-wrap gap-3">
                     {exp.elevation.split(",").map((tech, i) => (
-                      <span key={i} className={`px-3 py-1 rounded-lg text-xs font-medium ${isDark ? "bg-white/10 text-white" : "bg-gray-200 text-gray-800"}`}>{tech.trim()}</span>
+                      <span key={i} className="px-3 py-1 rounded-md text-xs font-medium border-[0.5px] border-[#333] text-white">{tech.trim()}</span>
                     ))}
                   </div>
                 </div>
 
                 {/* Duration Chart etc. */}
-                <div className={`
+                <div className="
                   col-span-1
-                  rounded-xl
-                  p-6
+                  rounded-2xl
+                  p-10
                   border
-                  transition-colors duration-500
-                  ${isDark ? "bg-white/3 border-white/6" : "bg-gray-100 border-gray-200"}
-                `}>
-                  <h3 className={`text-sm font-medium ${isDark ? "text-white/80" : "text-gray-800"}`}>Project Durations (Months)</h3>
-                  <div className="mt-4">
+                  h-[260px]
+                  border-[#333] hover:border-[#555]
+                ">
+                  <h3 className="text-sm font-medium text-[#eeecec]">Project Durations (Months)</h3>
+                  <div className="">
                     {(() => {
                       const durations = experienceData.map((d) => {
                         const m = d.distance.match(/\d+/);
@@ -315,7 +303,7 @@ export default function ExperienceSection() {
                       return (
                         <svg
                           viewBox={`0 0 ${chartWidth} ${chartHeight + 30}`}
-                          className="w-full h-48"
+                          className="w-full h-28"
                         >
                           <rect
                             width="100%"
@@ -387,85 +375,51 @@ export default function ExperienceSection() {
                 </div>
               </div>
 
-              {/* Live Links, etc… */}
-              <div className="mt-3 space-y-1">
-                {exp.links && exp.links.length > 0 ? (
-                  exp.links.map((link, idx) => (
-                    <div key={idx} className={`${isDark ? "text-white/70" : "text-gray-800"}`}>
-                      <span className={`font-medium ${isDark ? "text-white" : "text-gray-900"}`}>Live Website :</span>{" "}
-                      <a
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`hover:underline ${isDark ? "text-green-400" : "text-blue-600"}`}
-                      >
-                        {link.url}
-                      </a>
-                    </div>
-                  ))
-                ) : (
-                  <div className={`mt-3 text-sm ${isDark ? "text-red-400" : "text-red-600"}`}>
-                    Live Website : <span className="italic">Currently Not Available</span>
-                  </div>
-                )}
-              </div>
             </div>
 
             {/* Right column */}
-            <aside className="sm:col-span-5 col-span-1 flex flex-col gap-6">
+            <aside className="sm:col-span-6 col-span-1 flex flex-col gap-6">
               {/* Title, meta, etc… */}
-              <div className={`
+              <div className="
                 rounded-2xl
                 p-6
                 border
-                shadow-md
-                backdrop-blur-md
-                transition-colors duration-500
-                ${isDark ? "bg-[#b68d40]/20 border-white/6" : "bg-white border-gray-200"}
-              `}>
-                <div className="flex items-start justify-between">
+                border-[#333] hover:border-[#555]
+                mt-22
+                h-[400px]
+              ">
+                <div className="flex items-start justify-betweenm transition-colors duration-500">
                   <div>
                     <motion.h2
                       key={exp.title}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6 }}
-                      className={`text-2xl font-extrabold leading-tight ${isDark ? "text-white" : "text-gray-900"}`}
+                      className="text-2xl font-extrabold leading-tight text-[#eeecec]"
                     >
                       {exp.title}
                     </motion.h2>
                     <div className="flex items-center gap-3 mt-2">
-                      <span className={`px-2 py-0.5 text-xs rounded-md ${isDark ? "bg-white/10 text-white/70" : "bg-gray-200 text-gray-700"}`}>
+                      <span className="px-2 py-0.5 text-xs rounded-md bg-white/10 text-white/70">
                         {exp.type}
                       </span>
-                      <p className={`text-sm ${isDark ? "text-white/60" : "text-gray-600"}`}>{exp.location}</p>
+                      <p className="text-sm text-white/60">{exp.location}</p>
                     </div>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    {/* <button className={`w-10 h-10 rounded-full flex items-center justify-center border transition-colors duration-500 ${isDark ? "bg-white/6 border-white/8" : "bg-gray-100 border-gray-300"}`}>
-                      🔔
-                    </button> */}
-                    <button
-                      onClick={() => setIsDark(!isDark)}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center border transition-colors duration-500 ${isDark ? "bg-white/6 border-white/8" : "bg-gray-100 border-gray-300"}`}
-                    >
-                      {isDark ? "☀" : "🌙"}
-                    </button>
                   </div>
                 </div>
 
-                <div className="mt-6 grid grid-cols-3 gap-4 text-center">
+                <div className="mt-6 grid grid-cols-3 gap-4 text-left">
                   <div>
                     <div className={`text-sm ${isDark ? "text-white/70" : "text-gray-600"}`}>Stack</div>
-                    <div className={`text-lg font-semibold mt-1 ${isDark ? "text-white" : "text-gray-900"}`}>{exp.elevation}</div>
+                    <div className={`text-md font-semibold mt-1 ${isDark ? "text-white" : "text-gray-900"}`}>{exp.elevation}</div>
                   </div>
                   <div>
                     <div className={`text-sm ${isDark ? "text-white/70" : "text-gray-600"}`}>Duration</div>
-                    <div className={`text-lg font-semibold mt-1 ${isDark ? "text-white" : "text-gray-900"}`}>{exp.distance}</div>
+                    <div className={`text-md font-semibold mt-1 ${isDark ? "text-white" : "text-gray-900"}`}>{exp.distance}</div>
                   </div>
                   <div>
                     <div className={`text-sm ${isDark ? "text-white/70" : "text-gray-600"}`}>Time</div>
-                    <div className={`text-lg font-semibold mt-1 ${isDark ? "text-white" : "text-gray-900"}`}>{exp.time}</div>
+                    <div className={`text-md font-semibold mt-1 ${isDark ? "text-white" : "text-gray-900"}`}>{exp.time}</div>
                   </div>
                 </div>
 
@@ -478,9 +432,34 @@ export default function ExperienceSection() {
                 >
                   {exp.description}
                 </motion.p>
+
+                {/* Live Links, etc… */}
+                <div className="mt-3 flex flex-wrap gap-3">
+                  {exp.links && exp.links.length > 0 ? (
+                    exp.links.map((link, idx) => (
+                      <a
+                        key={idx}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-3 py-1.5 text-xs font-medium rounded-lg bg-white/10 text-[#eeecec] hover:bg-white/20 transition-all text-center"
+                      >
+                        Live Website
+                      </a>
+                    ))
+                  ) : (
+                    <button
+                      className="px-3 py-1.5 text-xs font-medium rounded-lg border border-white/20 text-[#eeecec] hover:bg-white/10 transition-all text-center cursor-not-allowed"
+                      disabled
+                    >
+                      Live Website — Not Available
+                    </button>
+                  )}
+                </div>
+
               </div>
 
-              <div className={`
+              {/* <div className={`
                 rounded-2xl
                 p-4
                 border
@@ -496,9 +475,9 @@ export default function ExperienceSection() {
                   </div>
                   <div className={`ml-auto text-sm ${isDark ? "text-white/60" : "text-gray-600"}`}>⋯</div>
                 </div>
-              </div>
+              </div> */}
 
-              <div className={`
+              {/* <div className={`
                 rounded-2xl
                 p-5
                 border
@@ -513,7 +492,7 @@ export default function ExperienceSection() {
                     : <li>No key features listed</li>
                   }
                 </ul>
-              </div>
+              </div> */}
             </aside>
           </div>
         )}

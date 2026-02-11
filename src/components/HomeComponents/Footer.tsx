@@ -28,29 +28,29 @@ const SocialIcon: React.FC<{ href: string; icon: JSX.Element }> = ({ href, icon 
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#0D1117] text-gray-400 py-16 px-6 border-t border-gray-800">
+    <footer className="text-[#eeecec] py-16 px-6 border-t border-[#555] mt-20">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
 
         {/* About Section */}
         <FooterColumn title="About">
-          <p className="text-sm">
+          <p className="text-sm sm:text-[14px] -tracking-tight text-left text-[#8b8b8be0]">
             Hi, I’m Ram. I build scalable web and software solutions using modern technologies. Let’s connect and create something amazing.
           </p>
         </FooterColumn>
 
         {/* Quick Links */}
-        <FooterColumn title="Quick Links">
-          <a href="#skills" className="hover:text-purple-400 transition">Skills</a>
-          <a href="#projects" className="hover:text-purple-400 transition">Projects</a>
-          <a href="#experience" className="hover:text-purple-400 transition">Experience</a>
-          <a href="#contact" className="hover:text-purple-400 transition">Contact</a>
+        <FooterColumn title="Quick Links" >
+          <a href="#skills" className="    text-[#8b8b8be0] hover:text-[#eeecec] transition">Skills</a>
+          <a href="#projects" className="  text-[#8b8b8be0] hover:text-[#eeecec] transition">Projects</a>
+          <a href="#experience" className="text-[#8b8b8be0] hover:text-[#eeecec] transition">Experience</a>
+          <a href="#contact" className="   text-[#8b8b8be0] hover:text-[#eeecec] transition">Contact</a>
         </FooterColumn>
 
         {/* Contact */}
         <FooterColumn title="Contact">
-          <p className="text-sm">Email: <a href="mailto:gulaveram2@gmail.com" className="hover:text-purple-400 transition">gulaveram2@gmail.com</a></p>
-          <p className="text-sm">Phone: <a href="tel:+919876543210" className="hover:text-purple-400 transition">+91 9307787825</a></p>
-          <p className="text-sm">Location: Pune, India</p>
+          <p className="text-sm text-[#8b8b8be0]">Email: <a href="mailto:gulaveram2@gmail.com" className="text-[#8b8b8be0] hover:text-[#eeecec] transition">gulaveram2@gmail.com</a></p>
+          <p className="text-sm text-[#8b8b8be0]">Phone: <a href="tel:+919876543210" className="text-[#8b8b8be0] hover:text-[#eeecec] transition">+91 9307787825</a></p>
+          <p className="text-sm text-[#8b8b8be0]">Location: Pune, India</p>
         </FooterColumn>
 
         {/* Socials */}
@@ -65,9 +65,9 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Note */}
-      <div className="mt-12 border-t border-gray-800 pt-6 text-center text-gray-500 text-sm">
+      <div className="mt-12 border-t border-[#333] pt-6 text-center text-gray-500 text-sm">
         © {new Date().getFullYear()} Ram Gulave. All rights reserved. 
-        <span className="block text-purple-400 mt-1 font-medium">Let’s build something legendary together.</span>
+        <span className="block text-[#eeecec] -mb-10 font-medium">Let’s build something legendary together.</span>
       </div>
     </footer>
   );

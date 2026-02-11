@@ -37,19 +37,19 @@ const ContactSection: React.FC = () => {
     return (
         <section
             id="contact"
-            className="scroll-mt-18 relative py-6 px-6 bg-gradient-to-br from-[#0D1117] via-[#111827] to-[#1f2937] text-white overflow-hidden"
+            className="scroll-mt-18 relative py-6 px-6 overflow-hidden mb-40"
         >
             {/* Background Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(139,92,246,0.25),transparent_70%)] pointer-events-none"></div>
+            <div className="absolute inset-0"></div>
 
             <div className="relative max-w-6xl mx-auto">
                 {/* Heading */}
-                <div className="text-center mb-16">
-                    <h2 className="text-5xl sm:text-[60px] font-bold bg-gradient-to-r from-pink-600 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+                <div className="text-left ">
+                    <h2 className="text-xl text-[#eeecec] sm:text-3xl font-bold mb-2">
                         Let’s Connect
                     </h2>
 
-                    <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+                    <p className="text-white mb-4">
                         Have an idea, project, or just want to say hi? Drop me a message —
                         I’d love to chat 🚀
                     </p>
@@ -60,7 +60,7 @@ const ContactSection: React.FC = () => {
                     <form
                         ref={formRef}
                         onSubmit={handleSubmit}
-                        className="bg-[#10131c]/80 backdrop-blur-lg p-8 rounded-2xl border border-gray-800 shadow-2xl"
+                        className="p-8 rounded-2xl border border-[#333]"
                     >
                         <div className="mb-5">
                             <input
@@ -68,34 +68,32 @@ const ContactSection: React.FC = () => {
                                 name="name"
                                 placeholder="Your Name"
                                 required
-                                className="w-full px-4 py-3 bg-[#0b0e13] text-sm text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+                                className="w-full px-4 py-3 border-[#333] text-sm text-white rounded-lg border hover:border-[#555] focus:outline-none transition"
                             />
                         </div>
-
                         <div className="mb-5">
                             <input
                                 type="email"
                                 name="email"
                                 placeholder="Your Email"
                                 required
-                                className="w-full px-4 py-3 bg-[#0b0e13] text-sm text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+                                className="w-full px-4 py-3 text-sm text-white rounded-lg border border-[#333] hover:border-[#555] focus:outline-none transition"
                             />
                         </div>
-
                         <div className="mb-6">
                             <textarea
                                 name="message"
                                 rows={5}
                                 placeholder="Your Message"
                                 required
-                                className="w-full px-4 py-3 bg-[#0b0e13] text-sm text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+                                className="w-full px-4 py-3 text-sm text-white rounded-lg border border-[#333] hover:border-[#555] focus:outline-none transition"
                             ></textarea>
                         </div>
 
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 rounded-lg transition shadow-lg"
+                            className="w-full flex items-center border-[0.5px] boder-[#333] hover:border-[#555] justify-center gap-2 text-white py-3 focus:outline-none rounded-lg transition"
                         >
                             <MdSend className="text-xl" />
                             {loading ? "Sending..." : "Send Message"}
@@ -103,22 +101,22 @@ const ContactSection: React.FC = () => {
                     </form>
 
                     {/* Info Card */}
-                    <div className="bg-[#10131c]/80 backdrop-blur-lg p-8 rounded-2xl border border-gray-800 shadow-2xl flex flex-col justify-between">
+                    <div className="p-8 rounded-2xl border border-[#333] shadow-2xl flex flex-col justify-between">
                         <div>
-                            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+                            <h3 className="text-2xl text-[#eeecec] font-bold mb-6 ">
                                 Reach Me At
                             </h3>
 
                             {/* Email */}
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="bg-purple-600/20 p-3 rounded-full">
-                                    <MdEmail className="text-2xl text-purple-400" />
+                                <div className="p-3 rounded-full">
+                                    <MdEmail className="text-2xl " />
                                 </div>
                                 <div>
-                                    <p className="text-gray-400 text-sm">Email</p>
+                                    <p className="text-[#787777] text-sm">Email</p>
                                     <a
                                         href="mailto:gulaveram2@gmail.com"
-                                        className="text-white hover:text-purple-400 transition"
+                                        className="text-white  transition"
                                     >
                                         gulaveram2@gmail.com
                                     </a>
@@ -127,16 +125,16 @@ const ContactSection: React.FC = () => {
 
                             {/* LinkedIn */}
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="bg-purple-600/20 p-3 rounded-full">
-                                    <FaLinkedin className="text-2xl text-blue-400" />
+                                <div className=" p-3 rounded-full">
+                                    <FaLinkedin className="text-2xl " />
                                 </div>
                                 <div>
-                                    <p className="text-gray-400 text-sm">LinkedIn</p>
+                                    <p className="text-[#787777] text-sm">LinkedIn</p>
                                     <a
                                         href="https://www.linkedin.com/in/ramgulave"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-white hover:text-blue-400 transition"
+                                        className="text-white transition"
                                     >
                                         linkedin.com/in/ramgulave
                                     </a>
@@ -145,11 +143,11 @@ const ContactSection: React.FC = () => {
 
                             {/* GitHub */}
                             <div className="flex items-center gap-4">
-                                <div className="bg-purple-600/20 p-3 rounded-full">
+                                <div className=" p-3 rounded-full">
                                     <FaGithub className="text-2xl text-gray-300" />
                                 </div>
                                 <div>
-                                    <p className="text-gray-400 text-sm">GitHub</p>
+                                    <p className="text-[#787777] text-sm">GitHub</p>
                                     <a
                                         href="https://github.com/ramgulave"
                                         target="_blank"
@@ -165,7 +163,7 @@ const ContactSection: React.FC = () => {
                         <div className="border-t border-gray-800 mt-6 pt-6">
                             <a
                                 href="mailto:gulaveram2@gmail.com"
-                                className="block text-center px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 transition shadow-lg"
+                                className="block text-center px-4 py-3 border border-[#333] rounded-lg text-white hover:border-[#555] transition"
                             >
                                 Let’s Talk!
                             </a>

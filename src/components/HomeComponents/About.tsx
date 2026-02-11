@@ -9,7 +9,7 @@ function About() {
   return (
     <section
       id="about"
-      className="scroll-mt-10 relative flex flex-col items-center justify-center mx-4 md:mx-12 my-32 "
+      className="scroll-mt-10 relative flex flex-col items-center justify-center mx-4 md:mx-12 my-22 "
     >
       <div className="md:flex relative w-full  items-center justify-center">
 

@@ -118,7 +118,7 @@ export const experienceData = [
     time: "July 2025",
     distance: "2 months",
     elevation:
-      "Docusaurus, Tailwind CSS, React, Markdown/MDX, TypeScript, Git/GitHub, NGINX",
+      "Next.js, MDX, TypeScript, Tailwind CSS",
     description:
       "Developed a static documentation site using Docusaurus, aligned with the main product website’s design language. Optimized Docusaurus configuration for better SEO performance. Created a custom landing page to improve usability, navigation.",
     features: [

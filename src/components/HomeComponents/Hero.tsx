@@ -104,7 +104,7 @@ function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto w-full text-center space-y-6">
         <div className="space-y-0.5">
-          <h2 className="text-[52px] sm:text-7xl font-medium text-white leading-tight mx-10">
+          <h2 className="text-[50px] sm:text-7xl font-medium text-white leading-tight mx-10">
             Development & Deployment
           </h2>
         </div>

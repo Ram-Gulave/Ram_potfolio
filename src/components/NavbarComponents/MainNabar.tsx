@@ -131,7 +131,7 @@ const navLinks = [
   { name: "Experience", href: "#experience" },
   { name: "Technologies", href: "#technologies" },
   { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
+  // { name: "Skills", href: "#skills" },
   { name: "Contact", href: "#contact" },
   // Resume is moved to a prominent button on the right (like Supabase's "Start your project")
 ];
@@ -271,7 +271,14 @@ function MainNavbar() {
               <a
                 key={i}
                 href={link.href}
-                className="relative font-bold text-sm text-white hover:text-teal-400 transition-colors duration-300 after:absolute after:bottom-[-6px] after:left-0 after:h-[2px] after:w-0 after:bg-teal-400 hover:after:w-full after:transition-all"
+                className="relative font-bold text-sm text-white 
+               hover:text-transparent hover:bg-clip-text 
+               hover:bg-gradient-to-r hover:from-pink-500 hover:via-violet-500 hover:to-blue-500
+               transition-all duration-300
+               after:content-[''] after:absolute after:bottom-[-2px] after:left-0 
+               after:h-[0.5px] after:w-0 
+               after:bg-gradient-to-r after:from-pink-500 after:via-violet-500 after:to-blue-500
+               hover:after:w-full after:transition-all after:duration-300"
               >
                 {link.name}
               </a>

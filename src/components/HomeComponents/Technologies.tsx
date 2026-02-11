@@ -91,7 +91,7 @@ const Technologies = () => {
   return (
     <section
       id="technologies"
-      className="scroll-mt-18 relative mx-4 sm:mx-10 lg:mx-20 my-16 px-6 md:px-20 border-[0.5px] border-[#333] rounded-2xl shadow-lg"
+      className="scroll-mt-18 relative mx-4 sm:mx-10 lg:mx-20 my-16 px-6 md:px-20 border-[0.5px] mb-50 border-[#333] rounded-2xl shadow-lg"
     >
       {/* Header */}
       <div className="flex w-full items-start">
@@ -111,24 +111,26 @@ const Technologies = () => {
           </p>
         </div>
 
+
         {/* Right 30% */}
         <div className="relative w-[30%] min-h-[160px]">
-          <div className="absolute bottom-8 right-0 flex gap-4">
+          <div className="absolute bottom-0 sm:bottom-8 right-0 flex flex-col sm:flex-row gap-2 sm:gap-4 ">
             <a
               href="https://www.macnman.com/"
               target="_blank"
-              className="px-3 py-1.5 text-sm font-medium rounded-lg bg-white/10 text-[#eeecec] hover:bg-white/20 transition-all"
+              className="px-3 py-1.5 text-xs font-medium rounded-lg bg-white/10 text-[#eeecec] hover:bg-white/20 transition-all text-center"
             >
               Proof of Work
             </a>
             <a
               href="#contact"
-              className="px-3 py-1.5 text-sm font-medium rounded-lg border border-white/20 text-[#eeecec] hover:bg-white/10 transition-all"
+              className="px-3 py-1.5 text-xs font-medium rounded-lg border border-white/20 text-[#eeecec] hover:bg-white/10 transition-all text-center"
             >
               Get in Touch
             </a>
           </div>
         </div>
+
       </div>
 
       {/* Slider */}
